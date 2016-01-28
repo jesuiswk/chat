@@ -12,7 +12,7 @@ io.on('connection',function(socket) {
     console.log('user disconnected');
   });
   socket.on('message',function(msg){
-    io.emit('message', msg);
+    io.emit('message', msg.username+": "+msg.message);
     console.log('message: '+msg);
   });
 });
